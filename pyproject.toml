@@ -1,0 +1,12 @@
+[project]
+name = "ctc-sign"
+version = "0.1.0"
+description = "PDF certification tool"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "dotenv>=0.9.9",
+    "flask>=3.1.0",
+    "pypdf2>=3.0.1",
+    "reportlab>=4.3.1",
+]
