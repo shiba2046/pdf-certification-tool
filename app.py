@@ -61,7 +61,8 @@ def add_text_box_to_pdf(
         line_height = 12
         y_position = y + box_height - line_height
         x_position = x + 5
-        lines = "\n".join([text, os.getenv("SIGN_TEXT"), sign_text]).split("\n")
+        sign_text_env = os.getenv("SIGNTEXT", "")
+        lines = "\n".join([text, sign_text_env, sign_text]).split("\n")
         for line in lines:
             line = line.strip()  # Remove extra whitespace
             if line:  # Only draw non-empty lines

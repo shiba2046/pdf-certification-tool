@@ -1,0 +1,29 @@
+[Unit]
+Description=PDF Certification Tool
+Documentation=https://github.com/your-repo/pdf-certification-tool
+After=network.target
+
+[Service]
+Type=exec
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/home/ubuntu/apps/pdf-certification-tool
+Environment=FLASK_ENV=production
+Environment=FLASK_APP=wsgi.py
+ExecStart=/home/ubuntu/apps/pdf-certification-tool/start_service.sh
+ExecReload=/bin/kill -s HUP $MAINPID
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=pdf-certification
+
+# 安全设置 - 调整为更宽松的配置
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=false
+ProtectHome=false
+ReadWritePaths=/home/ubuntu/apps/pdf-certification-tool
+
+[Install]
+WantedBy=multi-user.target 

@@ -9,4 +9,5 @@ dependencies = [
     "flask>=3.1.0",
     "pypdf2>=3.0.1",
     "reportlab>=4.3.1",
+    "gunicorn>=21.2.0",
 ]
