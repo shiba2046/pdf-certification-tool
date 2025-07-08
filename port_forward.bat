@@ -1,0 +1,1 @@
+netsh interface portproxy set v4tov4 listenport=5000 listenaddress=0.0.0.0 connectport=5000 connectaddress=$(wsl hostname -I)
